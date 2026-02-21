@@ -61,7 +61,7 @@ The agent runs an agentic loop: it receives a user request, decides which tools 
 ### Install
 
 ```bash
-git clone https://github.com/eden-chang/neuroui-agent.git
+git clone https://github.com/eden-chang/NeuroUI-Agent.git
 cd neuroui-agent
 pip install -r requirements.txt
 cp .env.example .env
@@ -83,25 +83,35 @@ Agent is thinking...
 
   [Tool Call] get_guidelines({"condition": "ADHD"})
   [Tool Call] search_components({"query": "task", "condition": "ADHD"})
-  [Tool Call] generate_component_code({"component_id": "card"})
+  [Tool Call] generate_component_code({"component_id": "card", ...})
   [Tool Call] generate_component_code({"component_id": "checkbox"})
+  [Tool Call] generate_component_code({"component_id": "badge"})
+  [Tool Call] generate_component_code({"component_id": "button"})
 
-Agent: Based on cognitive science principles for ADHD, I recommend combining
-the Card and Checkbox components. ADHD affects executive function and working
-memory — the Card creates structured sections that externalize cognitive
-scaffolding, while the Checkbox provides immediate visual feedback on completion,
-compensating for difficulties with self-monitoring.
+Agent:
 
-  import { Card, Checkbox } from '@neuroui/components';
+  import { Card, Checkbox, Badge, Button } from '@neuroui/components';
 
-  <Card variant="outlined">
-    <Card.Header>Today's Tasks</Card.Header>
-    <Card.Body>
-      <Checkbox label="Review pull request" />
-      <Checkbox label="Update documentation" />
-    </Card.Body>
+  <Card variant="outlined" interactive>
+    <Card.Header>
+      <Checkbox label={task.title} checked={task.completed} />
+      <Badge variant={task.priority === 'high' ? 'error' : 'warning'}>
+        {task.priority}
+      </Badge>
+    </Card.Header>
+    <Card.Footer>
+      <Button variant="ghost" size="sm">Edit</Button>
+    </Card.Footer>
   </Card>
+
+  Why This Combination Works for ADHD:
+  - Single-task focus: Each card represents one clear unit of work
+  - Immediate feedback: Checkbox state changes instantly
+  - Clear visual hierarchy: Card + Badge priorities reduce mental effort
+  - Progress visibility: Completed checkboxes provide dopamine feedback
 ```
+
+See [`examples/demo_output.md`](examples/demo_output.md) for full outputs across ADHD, autism, dyslexia, and general neurodivergent use cases.
 
 ## Project Structure
 
