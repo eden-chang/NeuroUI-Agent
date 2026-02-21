@@ -1,0 +1,230 @@
+[
+  {
+    "id": "button",
+    "name": "Button",
+    "category": "action",
+    "description": "Accessible button with loading states that use flash-safe indicators (static dots instead of spinners when flash safety is enabled). Supports multiple variants and sizes with clear focus ring styling.",
+    "neurodiversity_features": ["flash-safe-loading", "clear-focus-indicators", "motion-safe-transitions"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity", "epilepsy"],
+    "props": {
+      "variant": "'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'",
+      "size": "'sm' | 'md' | 'lg'",
+      "loading": "boolean",
+      "icon": "ReactNode"
+    },
+    "usage_example": "<Button variant=\"primary\" size=\"md\">Submit</Button>"
+  },
+  {
+    "id": "input",
+    "name": "Input",
+    "category": "form",
+    "description": "Text input with required label, optional hint text, and clear error/success states with icons. Auto-generates accessible IDs and ARIA descriptions. Integrates with readability settings for font size and spacing.",
+    "neurodiversity_features": ["always-visible-label", "clear-error-states", "readability-integration", "aria-compliant"],
+    "suitable_for": ["ADHD", "autism", "dyslexia"],
+    "props": {
+      "label": "string (required)",
+      "hint": "string",
+      "error": "string",
+      "success": "string",
+      "icon": "ReactNode"
+    },
+    "usage_example": "<Input label=\"Email\" hint=\"We'll never share your email\" />"
+  },
+  {
+    "id": "select",
+    "name": "Select",
+    "category": "form",
+    "description": "Dropdown select with structured option arrays, required labels, and error handling. Provides clear visual hierarchy and ARIA compliance with readability integration.",
+    "neurodiversity_features": ["structured-options", "clear-labels", "error-feedback", "readability-integration"],
+    "suitable_for": ["ADHD", "autism", "dyslexia"],
+    "props": {
+      "label": "string (required)",
+      "hint": "string",
+      "error": "string",
+      "options": "Array<{ value: string; label: string; disabled?: boolean }>",
+      "placeholder": "string",
+      "icon": "ReactNode"
+    },
+    "usage_example": "<Select label=\"Priority\" options={[{value: 'low', label: 'Low'}, {value: 'high', label: 'High'}]} />"
+  },
+  {
+    "id": "checkbox",
+    "name": "Checkbox",
+    "category": "form",
+    "description": "Checkbox with always-visible label, indeterminate state support, and error display. Custom styled with readability-aware spacing.",
+    "neurodiversity_features": ["clear-labels", "indeterminate-state", "readability-integration"],
+    "suitable_for": ["ADHD", "autism", "dyslexia"],
+    "props": {
+      "label": "string (required)",
+      "error": "string",
+      "indeterminate": "boolean"
+    },
+    "usage_example": "<Checkbox label=\"I agree to the terms\" />"
+  },
+  {
+    "id": "radio",
+    "name": "Radio / RadioGroup",
+    "category": "form",
+    "description": "Radio button with group context management. Supports vertical and horizontal orientations with adaptive spacing. RadioGroup provides error handling and accessible labeling.",
+    "neurodiversity_features": ["grouped-context", "adaptive-spacing", "clear-orientation", "error-feedback"],
+    "suitable_for": ["ADHD", "autism"],
+    "props": {
+      "Radio.label": "string (required)",
+      "Radio.value": "string (required)",
+      "RadioGroup.name": "string (required)",
+      "RadioGroup.label": "string (required)",
+      "RadioGroup.orientation": "'vertical' | 'horizontal'",
+      "RadioGroup.error": "string"
+    },
+    "usage_example": "<RadioGroup name=\"size\" label=\"Choose size\" orientation=\"vertical\">\n  <Radio label=\"Small\" value=\"sm\" />\n  <Radio label=\"Large\" value=\"lg\" />\n</RadioGroup>"
+  },
+  {
+    "id": "card",
+    "name": "Card",
+    "category": "layout",
+    "description": "Compound card component with Header, Body, and Footer sections. Supports interactive mode with keyboard navigation and motion-safe hover effects. Adaptive spacing based on cognitive load settings.",
+    "neurodiversity_features": ["structured-layout", "motion-safe-interactions", "adaptive-spacing", "keyboard-navigation"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "variant": "'default' | 'outlined' | 'elevated'",
+      "interactive": "boolean"
+    },
+    "usage_example": "<Card variant=\"outlined\">\n  <Card.Header>Title</Card.Header>\n  <Card.Body>Content here</Card.Body>\n  <Card.Footer>Actions</Card.Footer>\n</Card>"
+  },
+  {
+    "id": "dialog",
+    "name": "Dialog",
+    "category": "overlay",
+    "description": "Modal dialog with focus trap, escape key handling, and scroll lock. Uses motion-safe animations and adaptive sizing. Portal-based rendering ensures proper z-index management.",
+    "neurodiversity_features": ["focus-trap", "escape-to-close", "motion-safe-animations", "adaptive-sizing"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "open": "boolean (required)",
+      "onOpenChange": "(open: boolean) => void (required)",
+      "title": "string (required)",
+      "description": "string",
+      "closable": "boolean",
+      "size": "'sm' | 'md' | 'lg'"
+    },
+    "usage_example": "<Dialog open={isOpen} onOpenChange={setIsOpen} title=\"Confirm\">\n  <p>Are you sure?</p>\n  <Dialog.Actions>\n    <Button variant=\"ghost\" onClick={() => setIsOpen(false)}>Cancel</Button>\n    <Button variant=\"primary\" onClick={handleConfirm}>Confirm</Button>\n  </Dialog.Actions>\n</Dialog>"
+  },
+  {
+    "id": "accordion",
+    "name": "Accordion",
+    "category": "disclosure",
+    "description": "Collapsible content sections that reduce cognitive load by hiding non-essential information. Supports single or multiple open panels. Context-based state management with motion-safe animations.",
+    "neurodiversity_features": ["progressive-disclosure", "reduced-cognitive-load", "single-or-multiple-mode", "motion-safe"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "type": "'single' | 'multiple'",
+      "defaultValue": "string[]"
+    },
+    "usage_example": "<Accordion type=\"single\">\n  <AccordionItem value=\"item-1\">\n    <AccordionTrigger value=\"item-1\">Section 1</AccordionTrigger>\n    <AccordionContent value=\"item-1\">Content 1</AccordionContent>\n  </AccordionItem>\n</Accordion>"
+  },
+  {
+    "id": "tabs",
+    "name": "Tabs",
+    "category": "navigation",
+    "description": "Tabbed interface with full keyboard navigation (Arrow keys, Home, End). Supports controlled and uncontrolled modes. Context-based panel management with ARIA-compliant roles and states.",
+    "neurodiversity_features": ["keyboard-navigation", "clear-active-state", "aria-compliant", "predictable-layout"],
+    "suitable_for": ["ADHD", "autism", "motor-impairment"],
+    "props": {
+      "defaultValue": "string (required)",
+      "value": "string",
+      "onValueChange": "(value: string) => void"
+    },
+    "usage_example": "<Tabs defaultValue=\"tab1\">\n  <TabList>\n    <Tab value=\"tab1\">Overview</Tab>\n    <Tab value=\"tab2\">Details</Tab>\n  </TabList>\n  <TabPanel value=\"tab1\">Overview content</TabPanel>\n  <TabPanel value=\"tab2\">Details content</TabPanel>\n</Tabs>"
+  },
+  {
+    "id": "alert",
+    "name": "Alert",
+    "category": "feedback",
+    "description": "Notification banner with semantic variants (info, success, warning, error). Uses ARIA role='alert' for screen readers. Supports dismissible mode with cognitive-load-aware styling and auto-icons per variant.",
+    "neurodiversity_features": ["semantic-variants", "auto-icons", "dismissible", "cognitive-load-aware", "screen-reader-alert"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity", "visual-impairment"],
+    "props": {
+      "variant": "'info' | 'success' | 'warning' | 'error'",
+      "title": "string (required)",
+      "closable": "boolean",
+      "onClose": "() => void",
+      "icon": "ReactNode"
+    },
+    "usage_example": "<Alert variant=\"success\" title=\"Saved!\" closable>Your changes have been saved.</Alert>"
+  },
+  {
+    "id": "badge",
+    "name": "Badge",
+    "category": "feedback",
+    "description": "Inline status indicator with semantic color variants and auto-generated colored dots. Lightweight visual cue that avoids animation or motion, suitable for status labeling.",
+    "neurodiversity_features": ["no-animation", "semantic-colors", "lightweight-visual-cue"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "variant": "'default' | 'info' | 'success' | 'warning' | 'error'",
+      "icon": "ReactNode"
+    },
+    "usage_example": "<Badge variant=\"success\">Active</Badge>"
+  },
+  {
+    "id": "tooltip",
+    "name": "Tooltip",
+    "category": "overlay",
+    "description": "Contextual help tooltip with configurable delay timing. Automatically disabled in minimal density mode to avoid information overload. Uses motion-safe animations for reveal/hide.",
+    "neurodiversity_features": ["timing-aware-delay", "density-adaptive", "motion-safe", "supplementary-info"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "content": "ReactNode (required)",
+      "position": "'top' | 'bottom' | 'left' | 'right'",
+      "className": "string"
+    },
+    "usage_example": "<Tooltip content=\"Click to save your progress\" position=\"top\">\n  <Button>Save</Button>\n</Tooltip>"
+  },
+  {
+    "id": "navigation",
+    "name": "Navigation",
+    "category": "navigation",
+    "description": "Semantic navigation component with consistent, predictable layout. Supports horizontal and vertical orientations with keyboard navigation and active state styling. Adaptive spacing based on user preferences.",
+    "neurodiversity_features": ["predictable-layout", "keyboard-navigation", "adaptive-spacing", "clear-active-state"],
+    "suitable_for": ["ADHD", "autism", "motor-impairment"],
+    "props": {
+      "orientation": "'horizontal' | 'vertical'",
+      "label": "string (required)",
+      "NavigationItem.href": "string (required)",
+      "NavigationItem.active": "boolean",
+      "NavigationItem.icon": "ReactNode"
+    },
+    "usage_example": "<Navigation label=\"Main menu\" orientation=\"horizontal\">\n  <NavigationItem href=\"/\" active>Home</NavigationItem>\n  <NavigationItem href=\"/about\">About</NavigationItem>\n</Navigation>"
+  },
+  {
+    "id": "table",
+    "name": "Table",
+    "category": "data-display",
+    "description": "Compound table component with striped rows for visual row tracking, sticky headers for long lists, and sortable columns. Adaptive cell padding based on readability settings. ARIA-compliant sort indicators.",
+    "neurodiversity_features": ["striped-rows", "sticky-header", "sortable-columns", "adaptive-padding", "readability-integration"],
+    "suitable_for": ["ADHD", "autism", "dyslexia"],
+    "props": {
+      "striped": "boolean",
+      "stickyHeader": "boolean",
+      "TableHead.sortable": "boolean",
+      "TableHead.sortDirection": "'asc' | 'desc' | 'none'",
+      "TableHead.onSort": "() => void"
+    },
+    "usage_example": "<Table striped stickyHeader>\n  <Table.Header>\n    <Table.Row>\n      <Table.Head sortable sortDirection=\"asc\">Name</Table.Head>\n      <Table.Head>Status</Table.Head>\n    </Table.Row>\n  </Table.Header>\n  <Table.Body>\n    <Table.Row>\n      <Table.Cell>Item 1</Table.Cell>\n      <Table.Cell><Badge variant=\"success\">Active</Badge></Table.Cell>\n    </Table.Row>\n  </Table.Body>\n</Table>"
+  },
+  {
+    "id": "toast",
+    "name": "Toast (ToastProvider + Toaster + useToast)",
+    "category": "feedback",
+    "description": "Non-intrusive notification system with timing-aware durations (patient: 10s, normal: 5s, quick: 3s). Density-aware max visible toasts (minimal: 1, normal: 3). Supports silent mode, auto-dismiss with pause-on-hover, and action buttons. Motion-safe portal-based rendering.",
+    "neurodiversity_features": ["timing-aware-duration", "density-adaptive", "silent-mode", "pause-on-hover", "motion-safe", "action-support"],
+    "suitable_for": ["ADHD", "autism", "sensory-sensitivity"],
+    "props": {
+      "toast.title": "string (required)",
+      "toast.description": "string",
+      "toast.variant": "'info' | 'success' | 'warning' | 'error'",
+      "toast.duration": "number (ms)",
+      "toast.closable": "boolean",
+      "toast.action": "{ label: string; onClick: () => void }"
+    },
+    "usage_example": "const { toast } = useToast();\ntoast({ title: 'Saved', description: 'Your changes are saved.', variant: 'success' });"
+  }
+]

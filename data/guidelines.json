@@ -1,0 +1,99 @@
+[
+  {
+    "condition": "ADHD",
+    "principles": [
+      "Minimize distractions by reducing visual clutter and non-essential UI elements",
+      "Break tasks into small, manageable chunks with clear progress indicators",
+      "Provide immediate and clear feedback for every user action",
+      "Use time-based cues (timers, progress bars) to support task persistence",
+      "Avoid autoplay animations or sudden UI changes that hijack attention",
+      "Support single-focus mode to reduce working memory demands",
+      "Use progressive disclosure to show only relevant information at each step"
+    ],
+    "cognitive_basis": "ADHD affects executive function, working memory, and sustained attention. The prefrontal cortex, responsible for planning and impulse control, shows reduced activity. UI should externalize cognitive scaffolding — providing structure, reminders, and feedback that compensate for difficulties in self-regulation and task management.",
+    "design_patterns": [
+      "Single-task views over multi-task dashboards",
+      "Clear visual hierarchy with prominent CTAs",
+      "Progress bars and step indicators",
+      "Gentle, non-intrusive notifications",
+      "Undo support instead of confirmation dialogs"
+    ]
+  },
+  {
+    "condition": "autism",
+    "principles": [
+      "Use consistent and predictable layouts across all pages",
+      "Provide clear, explicit labels and avoid ambiguous icons or metaphors",
+      "Minimize sensory overload from bright colors, complex animations, or background noise",
+      "Support routine by maintaining stable navigation patterns",
+      "Offer explicit state indicators rather than relying on implicit cues",
+      "Avoid figurative language or unclear instructions in UI copy",
+      "Provide advance notice of changes or transitions"
+    ],
+    "cognitive_basis": "Autism involves differences in predictive processing and sensory integration. The brain's ability to form and update predictive models may work differently, making unexpected changes particularly disruptive. Sensory processing differences mean stimuli that are neutral for neurotypical users may be overwhelming. UI should provide explicit, consistent structure that supports pattern recognition.",
+    "design_patterns": [
+      "Stable, repeatable navigation structures",
+      "Explicit state labels (not just color changes)",
+      "Muted, consistent color palettes",
+      "Clear typography with adequate spacing",
+      "Transition warnings before major UI changes"
+    ]
+  },
+  {
+    "condition": "dyslexia",
+    "principles": [
+      "Use readable fonts (sans-serif, minimum 16px, adequate letter and word spacing)",
+      "Provide sufficient line height (1.5+) and paragraph spacing",
+      "Avoid justified text alignment — use left-aligned text",
+      "Support text-to-speech and alternative content formats",
+      "Use visual aids (icons, images, color coding) alongside text content",
+      "Keep sentences short and use simple vocabulary in UI copy",
+      "Allow users to customize font size and spacing"
+    ],
+    "cognitive_basis": "Dyslexia affects phonological processing — the ability to map written symbols to sounds. This is not a visual problem but a language processing difference. Reading demands significant cognitive resources, leading to faster fatigue. UI should reduce reading demands and provide multimodal information channels (visual + auditory + spatial).",
+    "design_patterns": [
+      "Large, well-spaced text with sans-serif fonts",
+      "Icons paired with text labels",
+      "Chunked content with clear headings",
+      "Audio alternatives for text-heavy content",
+      "High contrast without pure black-on-white"
+    ]
+  },
+  {
+    "condition": "sensory-sensitivity",
+    "principles": [
+      "Provide controls to reduce motion, animations, and transitions",
+      "Respect prefers-reduced-motion OS setting automatically",
+      "Avoid flashing content (3 flashes per second threshold for epilepsy safety)",
+      "Allow users to adjust color intensity and contrast",
+      "Minimize auditory stimuli and provide volume controls",
+      "Support dark mode and muted color schemes"
+    ],
+    "cognitive_basis": "Sensory processing sensitivity affects how the nervous system receives and responds to stimuli. Individuals may experience sensory overload from stimuli that others filter out automatically. This can include visual motion, bright colors, sudden sounds, or high-contrast patterns. UI should provide maximum user control over sensory input.",
+    "design_patterns": [
+      "Motion-safe animations with reduced-motion fallbacks",
+      "Flash-safe loading indicators",
+      "User-controllable color themes",
+      "Quiet default states with optional enhancements",
+      "Density controls for information presentation"
+    ]
+  },
+  {
+    "condition": "motor-impairment",
+    "principles": [
+      "Ensure all interactive elements are keyboard accessible",
+      "Provide large click/tap targets (minimum 44x44px)",
+      "Support keyboard shortcuts for common actions",
+      "Avoid interactions requiring precise mouse movements",
+      "Allow sufficient time for user responses — no aggressive timeouts"
+    ],
+    "cognitive_basis": "Motor impairments affect the ability to perform precise physical movements. This includes fine motor control needed for mouse targeting and fast keyboard input. UI should minimize the physical demands of interaction by providing multiple input modalities and generous target sizes.",
+    "design_patterns": [
+      "Full keyboard navigation support",
+      "Tab-based focus management",
+      "Skip navigation links",
+      "Large, well-spaced interactive elements",
+      "Keyboard shortcut overlays"
+    ]
+  }
+]
