@@ -62,11 +62,17 @@ The agent runs an agentic loop: it receives a user request, decides which tools 
 
 ```bash
 git clone https://github.com/eden-chang/NeuroUI-Agent.git
-cd neuroui-agent
+cd NeuroUI-Agent
 pip install -r requirements.txt
 cp .env.example .env
 # Add your API key to .env
 ```
+
+### Environment Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `ANTHROPIC_API_KEY` | Anthropic API key used by the agent loop | `your-api-key-here` |
 
 ### Run
 
@@ -116,7 +122,7 @@ See [`examples/demo_output.md`](examples/demo_output.md) for full outputs across
 ## Project Structure
 
 ```
-neuroui-agent/
+NeuroUI-Agent/
 ├── main.py              # CLI entry point
 ├── agent.py             # Agent loop (Claude API tool-use)
 ├── tools.py             # Tool functions (search, guidelines, codegen)
